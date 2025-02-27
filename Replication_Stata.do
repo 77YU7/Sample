@@ -1,5 +1,15 @@
 clear
 cd "/Users/fileyu7/Desktop/kindergarten"
+/*
+pick all variables, the 1990 census is organized by household members records follow their household record; to make is more concise I kept only part of the infixing process.
+*/
+cd "/Users/fileyu7/Desktop/kindergarten/PUMS/CENSUS1990"
+clear
+forvalues v=1/2{
+	clear
+infix str rectype 1  hhid 2-7 sample 9  state 11-12 areatype 18-19 hhsize 33-34 relate 9-10  sex 11 race 12-14 age 15-16 marsta 17 prwt 18-21 subfunit 36 subfrel 37 schtype 50 grade 51-52 grade_fin 51-52 born_num 89-90 hrwork 93-94 class 121 employ 91  famtype 151-152  employdq 210 hrworkdq 211 using DS000`v'/09952-000`v'-Data.txt,clear
+save pick1990/All1990_`v'.dta,replace
+}
 
 /*Table 2
 */
